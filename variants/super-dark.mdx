@@ -1,0 +1,226 @@
+---
+title: Super Dark Theme (BETA)
+description: An ultra-dark variant of Shades of Purple designed for low-light environments and reduced eye strain in dark settings
+---
+
+# Super Dark Theme Variant (BETA)
+
+The **Super Dark** variant is a darker version of Shades of Purple, featuring deeper backgrounds and adjusted contrast levels. This variant is currently in **BETA** and is designed specifically for developers who prefer working in low-light environments or those who want an even darker coding experience.
+
+<Info>
+This is a BETA feature. While fully functional, it's still being refined based on user feedback.
+</Info>
+
+## What Makes it Different
+
+The Super Dark variant offers:
+
+- **Deeper Blacks**: Ultra-dark backgrounds that reduce screen brightness
+- **Lower Light Emission**: Perfect for night-time coding or dark room environments
+- **Adjusted Contrast**: Optimized color contrast for visibility on darker backgrounds
+- **OLED Friendly**: Ideal for OLED displays with true black pixels
+- **Reduced Eye Strain**: Minimizes eye fatigue in low-light conditions
+
+## Key Differences from Standard
+
+<Tabs>
+  <Tab title="Background Comparison">
+    | Element | Standard | Super Dark | Difference |
+    |---------|----------|------------|------------|
+    | Editor Background | `#2D2B55` | `#191830` | **Much darker** |
+    | Sidebar Background | `#222244` | `#131327` | **Significantly darker** |
+    | Activity Bar | `#28284E` | `#15152a` | **Deeper black tone** |
+    | Status Bar | `#1E1E3F` | `#15152b` | **Almost black** |
+    | Gutter Background | `#28284E` | `#15152a` | **Darker gutter** |
+  </Tab>
+  
+  <Tab title="Visual Adjustments">
+    | Element | Standard | Super Dark | Notes |
+    |---------|----------|------------|-------|
+    | Selection | `#B362FF88` | `#5706a288` | Deeper purple selection |
+    | Line Numbers | `#A599E9` | `#7870ab` | Slightly muted for dark bg |
+    | Comments | `#B362FF` | `#B362FF` | Same (unchanged) |
+    | Foreground | `#A599E9` | `#A599E9` | Same (unchanged) |
+  </Tab>
+  
+  <Tab title="Use Case Scenarios">
+    | Scenario | Standard | Super Dark |
+    |----------|----------|------------|
+    | Bright Office | ✅ Excellent | ⚠️ May be too dark |
+    | Normal Lighting | ✅ Excellent | ✅ Good |
+    | Dim Lighting | ✅ Good | ✅ Excellent |
+    | Dark Room | ⚠️ May be bright | ✅ Excellent |
+    | OLED Display | ✅ Good | ✅ Excellent |
+    | Night Coding | ✅ Good | ✅ Excellent |
+  </Tab>
+</Tabs>
+
+## Super Dark Color Values
+
+Key colors specific to the Super Dark variant:
+
+<CodeGroup>
+```json Background Colors
+{
+  "editor.background": "#191830",
+  "sideBar.background": "#131327",
+  "activityBar.background": "#15152a",
+  "statusBar.background": "#15152b",
+  "panel.background": "#15152b",
+  "titleBar.activeBackground": "#15152b"
+}
+```
+
+```json Selection & Highlights
+{
+  "editor.selectionBackground": "#5706a288",
+  "editor.lineHighlightBackground": "#1F1F41",
+  "editorLineNumber.foreground": "#7870ab"
+}
+```
+
+```json UI Elements
+{
+  "tab.activeBackground": "#131327",
+  "tab.inactiveBackground": "#191830",
+  "editorWidget.background": "#131327",
+  "input.background": "#191830"
+}
+```
+</CodeGroup>
+
+## Best Suited For
+
+The Super Dark variant excels in:
+
+- **Night-Time Coding**: Perfect for late-night development sessions
+- **Dark Rooms**: Ideal when working without ambient lighting
+- **OLED Displays**: Takes full advantage of true black pixels
+- **Light Sensitivity**: Great for developers sensitive to bright screens
+- **Battery Saving**: Can help extend battery life on OLED devices
+- **Cinema/Studio Work**: Perfect for dark editing environments
+
+<Note>
+If you work in a bright office or with lots of natural light, the Standard variant may be more suitable.
+</Note>
+
+## Activation Instructions
+
+<Info>
+The Super Dark variant is included with the main Shades of Purple theme extension.
+</Info>
+
+### Method 1: Using the Command Palette
+
+1. Open the Command Palette with `Cmd/Ctrl + Shift + P`
+2. Type "Color Theme" and select **Preferences: Color Theme**
+3. Choose **Shades of Purple (Super Dark)** from the list
+4. Look for the **(Super Dark) · BETA** label
+
+### Method 2: Via Settings
+
+Add this to your `settings.json`:
+
+<CodeGroup>
+```json settings.json
+{
+  "workbench.colorTheme": "Shades of Purple (Super Dark)"
+}
+```
+</CodeGroup>
+
+### Method 3: Quick Switch
+
+If you're already using Shades of Purple:
+
+1. Press `Cmd/Ctrl + K` then `Cmd/Ctrl + T`
+2. Select **Shades of Purple (Super Dark) · BETA**
+3. Compare with the Standard variant to find your preference
+
+## Tips for Best Experience
+
+<Tabs>
+  <Tab title="Display Settings">
+    For optimal viewing with Super Dark:
+    
+    - **Reduce monitor brightness** by 10-20%
+    - **Enable night mode** on your OS if available
+    - **Adjust contrast** on your display settings
+    - **Use f.lux or similar** to reduce blue light at night
+  </Tab>
+  
+  <Tab title="Editor Settings">
+    Consider these VSCode settings:
+    
+    ```json
+    {
+      "editor.renderWhitespace": "boundary",
+      "editor.cursorBlinking": "smooth",
+      "workbench.fontAliasing": "auto",
+      "editor.smoothScrolling": true
+    }
+    ```
+  </Tab>
+  
+  <Tab title="Lighting Tips">
+    Optimize your environment:
+    
+    - Use **bias lighting** behind your monitor
+    - Avoid **direct overhead lights**
+    - Enable **dark mode** system-wide
+    - Take regular **20-20-20 breaks**
+  </Tab>
+</Tabs>
+
+## Known Considerations
+
+<Note>
+As this variant is in BETA, here are some things to keep in mind:
+</Note>
+
+- **Bright Environments**: May be too dark for well-lit offices
+- **Projectors**: The Standard variant is better for presentations
+- **Color Accuracy**: Some syntax colors may appear slightly different
+- **Accessibility**: Ensure sufficient contrast for your needs
+
+## Feedback Welcome
+
+Since Super Dark is in BETA, your feedback is valuable:
+
+- Report issues on [GitHub](https://github.com/ahmadawais/shades-of-purple-vscode/issues)
+- Share your experience on [Twitter](https://twitter.com/mrahmadawais)
+- Rate the theme on the [VSCode Marketplace](https://marketplace.visualstudio.com/items?itemName=ahmadawais.shades-of-purple)
+
+## Switching Between Variants
+
+You can easily switch between Standard and Super Dark:
+
+<CodeGroup>
+```bash Quick Switch Keyboard Shortcut
+# Press these keys in sequence:
+Cmd/Ctrl + K, then Cmd/Ctrl + T
+
+# Then select your preferred variant:
+# - Shades of Purple (Standard)
+# - Shades of Purple (Super Dark) · BETA
+```
+
+```json Multiple Workspace Settings
+// Use different themes for different projects
+{
+  "workbench.colorTheme": "Shades of Purple (Super Dark)"
+}
+```
+</CodeGroup>
+
+<Info>
+Many users keep Standard for daytime work and Super Dark for evening coding sessions.
+</Info>
+
+## Next Steps
+
+- Compare with the [Standard variant](/variants/standard) to find your preference
+- Check [recommended settings](/configuration/recommended-settings) for optimal experience
+- View the complete [color palette](/reference/colors) for both variants
+- Learn about [customization options](/configuration/customization)
+- Join the community of 5M+ developers using Shades of Purple

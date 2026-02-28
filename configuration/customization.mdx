@@ -1,0 +1,406 @@
+---
+title: Theme Customization
+description: Personalize Shades of Purple to match your workflow and preferences
+---
+
+While Shades of Purple is designed to work beautifully out of the box, VSCode provides powerful customization options to tailor the theme to your specific needs.
+
+## Customization Methods
+
+You can customize Shades of Purple in three main ways:
+
+1. **Workbench Colors** - Modify UI elements (sidebar, tabs, status bar, etc.)
+2. **Token Colors** - Adjust syntax highlighting colors
+3. **Semantic Highlighting** - Control intelligent code coloring
+
+## Workbench Color Customization
+
+Workbench colors control VSCode's UI elements. Add these to your `settings.json`:
+
+```json
+{
+  "workbench.colorCustomizations": {
+    "[Shades of Purple]": {
+      "editor.background": "#2D2B55",
+      "sideBar.background": "#222244",
+      "activityBar.background": "#28284E",
+      "statusBar.background": "#1E1E3F"
+    }
+  }
+}
+```
+
+<Note>
+  The `[Shades of Purple]` scope ensures your customizations only apply when using this theme.
+</Note>
+
+### Common Workbench Customizations
+
+<Accordion title="Editor Background Colors">
+  Customize the main editor and related backgrounds:
+  
+  ```json
+  {
+    "workbench.colorCustomizations": {
+      "[Shades of Purple]": {
+        "editor.background": "#2D2B55",
+        "editor.lineHighlightBackground": "#1F1F41",
+        "editorGutter.background": "#28284E",
+        "editorLineNumber.foreground": "#A599E9"
+      }
+    }
+  }
+  ```
+  
+  These values are the theme defaults - modify them to suit your preference.
+</Accordion>
+
+<Accordion title="Sidebar & Activity Bar">
+  Customize the sidebar and activity bar appearance:
+  
+  ```json
+  {
+    "workbench.colorCustomizations": {
+      "[Shades of Purple]": {
+        "sideBar.background": "#222244",
+        "sideBar.foreground": "#A599E9",
+        "activityBar.background": "#28284E",
+        "activityBar.foreground": "#FFFFFF",
+        "activityBarBadge.background": "#FAD000",
+        "activityBarBadge.foreground": "#1E1E3F"
+      }
+    }
+  }
+  ```
+</Accordion>
+
+<Accordion title="Terminal Colors">
+  Adjust integrated terminal colors:
+  
+  ```json
+  {
+    "workbench.colorCustomizations": {
+      "[Shades of Purple]": {
+        "terminal.background": "#1E1E3F",
+        "terminal.foreground": "#FFFFFF",
+        "terminal.ansiBlack": "#000000",
+        "terminal.ansiRed": "#EC3A37F5",
+        "terminal.ansiGreen": "#3AD900",
+        "terminal.ansiYellow": "#FAD000",
+        "terminal.ansiBlue": "#7857fe",
+        "terminal.ansiMagenta": "#FF2C70",
+        "terminal.ansiCyan": "#80FCFF",
+        "terminal.ansiWhite": "#FFFFFF"
+      }
+    }
+  }
+  ```
+</Accordion>
+
+<Accordion title="Status Bar">
+  Modify status bar colors:
+  
+  ```json
+  {
+    "workbench.colorCustomizations": {
+      "[Shades of Purple]": {
+        "statusBar.background": "#1E1E3F",
+        "statusBar.foreground": "#A599E9",
+        "statusBar.debuggingBackground": "#FAD000",
+        "statusBar.debuggingForeground": "#1E1E3F"
+      }
+    }
+  }
+  ```
+</Accordion>
+
+<Accordion title="Tabs & Editor Groups">
+  Customize tab appearance:
+  
+  ```json
+  {
+    "workbench.colorCustomizations": {
+      "[Shades of Purple]": {
+        "tab.activeBackground": "#222244",
+        "tab.activeForeground": "#FFFFFF",
+        "tab.activeBorder": "#FAD000",
+        "tab.inactiveBackground": "#2D2B55",
+        "tab.inactiveForeground": "#A599E9",
+        "editorGroupHeader.tabsBackground": "#2D2B55"
+      }
+    }
+  }
+  ```
+</Accordion>
+
+## Token Color Customization
+
+Token colors control syntax highlighting. Use `editor.tokenColorCustomizations` to modify specific code elements:
+
+```json
+{
+  "editor.tokenColorCustomizations": {
+    "[Shades of Purple]": {
+      "comments": "#B362FF",
+      "strings": "#A5FF90",
+      "keywords": "#FF9D00",
+      "functions": "#FAD000",
+      "variables": "#E1EFFF"
+    }
+  }
+}
+```
+
+### Advanced Token Customization
+
+For fine-grained control, use TextMate rules:
+
+<CodeGroup>
+```json Comments & Keywords
+{
+  "editor.tokenColorCustomizations": {
+    "[Shades of Purple]": {
+      "textMateRules": [
+        {
+          "scope": ["comment", "punctuation.definition.comment"],
+          "settings": {
+            "foreground": "#B362FF",
+            "fontStyle": "italic"
+          }
+        },
+        {
+          "scope": "keyword",
+          "settings": {
+            "foreground": "#FF9D00",
+            "fontStyle": ""
+          }
+        }
+      ]
+    }
+  }
+}
+```
+
+```json Strings & Functions
+{
+  "editor.tokenColorCustomizations": {
+    "[Shades of Purple]": {
+      "textMateRules": [
+        {
+          "scope": ["string", "punctuation.definition.string"],
+          "settings": {
+            "foreground": "#A5FF90"
+          }
+        },
+        {
+          "scope": "entity.name.function",
+          "settings": {
+            "foreground": "#FAD000"
+          }
+        }
+      ]
+    }
+  }
+}
+```
+
+```json Variables & Classes
+{
+  "editor.tokenColorCustomizations": {
+    "[Shades of Purple]": {
+      "textMateRules": [
+        {
+          "scope": "variable",
+          "settings": {
+            "foreground": "#E1EFFF"
+          }
+        },
+        {
+          "scope": "entity.name.type.class",
+          "settings": {
+            "foreground": "#FB94FF"
+          }
+        }
+      ]
+    }
+  }
+}
+```
+</CodeGroup>
+
+## Semantic Highlighting
+
+Semantic highlighting provides intelligent, context-aware syntax coloring. By default, Shades of Purple disables this to preserve the carefully crafted color scheme:
+
+```json
+{
+  "editor.semanticHighlighting.enabled": false
+}
+```
+
+<Warning>
+  Enabling semantic highlighting may override some of the theme's color choices and change the visual appearance significantly.
+</Warning>
+
+### Customizing Semantic Tokens
+
+If you enable semantic highlighting, you can customize it:
+
+```json
+{
+  "editor.semanticHighlighting.enabled": true,
+  "editor.semanticTokenColorCustomizations": {
+    "[Shades of Purple]": {
+      "enabled": true,
+      "rules": {
+        "*.declaration": { "bold": true },
+        "*.readonly": { "fontStyle": "italic" },
+        "parameter": "#9EFFFF",
+        "property": "#FFEE80",
+        "class": "#FB94FF"
+      }
+    }
+  }
+}
+```
+
+## Extension-Specific Settings
+
+Some extensions benefit from theme-specific color configurations:
+
+### Highlight Matching Tag
+
+This extension highlights matching HTML/JSX tags. Configure it to match Shades of Purple:
+
+```json
+{
+  "highlight-matching-tag.styles": {
+    "opening": {
+      "full": {
+        "highlight": "rgba(165, 153, 233, 0.3)"
+      }
+    }
+  }
+}
+```
+
+The purple transparency (`rgba(165, 153, 233, 0.3)`) complements the theme perfectly.
+
+<Info>
+  Install [Highlight Matching Tag](https://marketplace.visualstudio.com/items?itemName=vincaslt.highlight-matching-tag) from the VSCode marketplace.
+</Info>
+
+### Import Cost
+
+The Import Cost extension shows the size of imported packages. These colors integrate seamlessly:
+
+```json
+{
+  "importCost.largePackageColor": "#EC3A37F5",
+  "importCost.mediumPackageColor": "#B362FF",
+  "importCost.smallPackageColor": "#B362FF"
+}
+```
+
+- **Large packages**: Red (`#EC3A37F5`) - matches theme's error/warning color
+- **Medium packages**: Purple (`#B362FF`) - matches theme's comment color
+- **Small packages**: Purple (`#B362FF`) - consistent with medium
+
+<Info>
+  Install [Import Cost](https://marketplace.visualstudio.com/items?itemName=wix.vscode-import-cost) from the VSCode marketplace.
+</Info>
+
+### Indent Rainbow
+
+For indent visualization that works with the theme:
+
+```json
+{
+  "indentRainbow.colors": [
+    "rgba(165, 153, 233, 0.1)",
+    "rgba(165, 153, 233, 0.2)",
+    "rgba(165, 153, 233, 0.3)",
+    "rgba(165, 153, 233, 0.4)"
+  ]
+}
+```
+
+<Info>
+  See the [GitHub discussion](https://github.com/ahmadawais/shades-of-purple-vscode/issues/37) for more Indent Rainbow configurations.
+</Info>
+
+## Theme Color Reference
+
+Here are the main colors used in Shades of Purple that you can reference in customizations:
+
+| Color Name | Hex Code | Usage |
+|------------|----------|-------|
+| Background | `#2D2B55` | Main editor background |
+| Background Dark | `#1E1E3F` | Darker backgrounds (terminal, sidebar) |
+| Foreground | `#A599E9` | Default text color |
+| Yellow/Gold | `#FAD000` | Keywords, highlights, cursor |
+| Orange | `#FF7200` | Warnings, special elements |
+| Light Orange | `#FF9D00` | Keywords, operators |
+| Purple | `#B362FF` | Comments, medium emphasis |
+| Pink/Magenta | `#FF628C` | Constants, errors |
+| Light Pink | `#FB94FF` | Definitions, classes |
+| Green | `#A5FF90` | Strings, success states |
+| Cyan | `#9EFFFF` | Variables, tags, meta |
+| Red | `#EC3A37F5` | Errors, deletions |
+
+For the complete color palette, see the [Color Palette Reference](/getting-started/color-palette).
+
+## Example: Custom Theme Variant
+
+Here's an example of creating a darker variant of Shades of Purple:
+
+```json
+{
+  "workbench.colorCustomizations": {
+    "[Shades of Purple]": {
+      "editor.background": "#1E1E3F",
+      "sideBar.background": "#181833",
+      "activityBar.background": "#1A1A38",
+      "statusBar.background": "#141428",
+      "panel.background": "#141428",
+      "terminal.background": "#141428",
+      "editorGroupHeader.tabsBackground": "#1E1E3F",
+      "tab.inactiveBackground": "#1E1E3F"
+    }
+  }
+}
+```
+
+<Note>
+  VSCode also offers a "Shades of Purple (Super Dark)" variant in beta. Look for it in the theme selector!
+</Note>
+
+## Sharing Your Customizations
+
+If you create a customization you love:
+
+1. Share it in the [GitHub Discussions](https://github.com/ahmadawais/shades-of-purple-vscode/discussions)
+2. Tweet it to [@MrAhmadAwais](https://twitter.com/mrahmadawais)
+3. Consider creating a derivative theme
+
+## Troubleshooting
+
+### Changes Not Appearing
+
+1. Ensure you're using the exact theme name: `[Shades of Purple]`
+2. Check for JSON syntax errors in settings.json
+3. Reload VSCode window (`Cmd+Shift+P` → "Reload Window")
+4. Verify the theme is active in Color Theme selector
+
+### Colors Look Wrong
+
+1. Disable semantic highlighting if it interferes
+2. Check for conflicting extensions that modify colors
+3. Reset to defaults by removing customizations
+4. Ensure you're using the latest theme version
+
+## Next Steps
+
+- Review the [Recommended Settings](/configuration/recommended-settings) for optimal configuration
+- Configure your [Font Setup](/configuration/font-setup) for the best visual experience
+- Explore the [Color Palette](/getting-started/color-palette) for all available theme colors

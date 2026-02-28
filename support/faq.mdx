@@ -1,0 +1,194 @@
+---
+title: Frequently Asked Questions
+description: Common questions and answers about Shades of Purple VSCode theme
+---
+
+## Frequently Asked Questions
+
+Got questions about Shades of Purple? Here are answers to the most common questions from our community of 5+ million developers.
+
+<Accordion title="How do I disable italics in the theme?">
+  If you prefer a no-italics version of Shades of Purple, you can customize this in your VSCode settings.
+
+  Add the following to your `settings.json`:
+
+  ```json
+  {
+    "editor.tokenColorCustomizations": {
+      "textMateRules": [
+        {
+          "scope": [
+            "comment",
+            "storage.modifier",
+            "storage.type.class.js",
+            "storage.type.function.js",
+            "storage.type.js",
+            "keyword.control",
+            "keyword.operator",
+            "variable.language"
+          ],
+          "settings": {
+            "fontStyle": ""
+          }
+        }
+      ]
+    }
+  }
+  ```
+
+  <Info>
+    For more details and discussion, see [GitHub Issue #13](https://github.com/ahmadawais/shades-of-purple-vscode/issues/13#issuecomment-416182574)
+  </Info>
+</Accordion>
+
+<Accordion title="What are the recommended Highlight Matching Tag settings?">
+  To make the Highlight Matching Tag extension work beautifully with Shades of Purple, use these settings:
+
+  ```json
+  {
+    "highlight-matching-tag.styles": {
+      "opening": {
+        "full": {
+          "highlight": "rgba(165, 153, 233, 0.3)"
+        }
+      }
+    }
+  }
+  ```
+
+  This creates a subtle purple highlight that matches the theme's color palette perfectly.
+
+  <Info>
+    Learn more in [GitHub Issue #20](https://github.com/ahmadawais/shades-of-purple-vscode/issues/20)
+  </Info>
+</Accordion>
+
+<Accordion title="How do I configure Indent Rainbow to match the theme?">
+  For Indent Rainbow extension compatibility with Shades of Purple, use these color settings:
+
+  ```json
+  {
+    "indentRainbow.colors": [
+      "rgba(165, 153, 233, 0.1)",
+      "rgba(165, 153, 233, 0.2)",
+      "rgba(165, 153, 233, 0.3)",
+      "rgba(165, 153, 233, 0.4)",
+      "rgba(165, 153, 233, 0.5)",
+      "rgba(165, 153, 233, 0.6)"
+    ]
+  }
+  ```
+
+  <Info>
+    See the full discussion in [GitHub Issue #37](https://github.com/ahmadawais/shades-of-purple-vscode/issues/37)
+  </Info>
+</Accordion>
+
+<Accordion title="How do I activate the theme after installation?">
+  After installing Shades of Purple, follow these steps to activate it:
+
+  <Steps>
+    <Step title="Open Color Theme picker">
+      Go to **Code/File** > **Preferences** > **Color Theme** (or press `Cmd+K Cmd+T` on macOS / `Ctrl+K Ctrl+T` on Windows/Linux)
+    </Step>
+    <Step title="Select Shades of Purple">
+      Scroll through the list and select **Shades of Purple**
+    </Step>
+    <Step title="Enjoy your new theme">
+      The theme will apply immediately. No reload required!
+    </Step>
+  </Steps>
+</Accordion>
+
+<Accordion title="Are there different variants of the theme?">
+  Yes! Shades of Purple comes with multiple variants:
+
+  - **Shades of Purple** - The classic, original theme
+  - **Shades of Purple (Super Dark)** - A darker variant (currently in BETA)
+
+  You can switch between variants by opening the Color Theme picker and selecting your preferred version.
+
+  <Note>
+    The Super Dark variant is currently in BETA and may receive updates based on community feedback.
+  </Note>
+</Accordion>
+
+<Accordion title="What font does the theme work best with?">
+  Shades of Purple works beautifully with any monospace font, but it's especially optimized for fonts that support ligatures like:
+
+  - **Operator Mono** (recommended by the creator)
+  - Fira Code
+  - JetBrains Mono
+  - Cascadia Code
+  - MonoLisa
+
+  To enable font ligatures, add this to your settings:
+
+  ```json
+  {
+    "editor.fontFamily": "Operator Mono, Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontLigatures": true
+  }
+  ```
+</Accordion>
+
+<Accordion title="Can I use Shades of Purple in other applications?">
+  Absolutely! Shades of Purple is available for many other applications:
+
+  - **Terminals:** iTerm2, Hyper, Alacritty, Konsole, Ghostty, Cygwin
+  - **Syntax Highlighters:** HighlightJS, Prism, Code Surfer, Bat
+  - **Apps:** Google Chrome, Alfred, Slack, WordPress
+
+  Check out the [Other Platforms](/customization/other-platforms) page for installation links.
+</Accordion>
+
+<Accordion title="Where can I learn to become a VSCode power user?">
+  The creator of Shades of Purple, Ahmad Awais, has created a comprehensive VSCode course after spending 1,000+ hours perfecting his setup.
+
+  **[VSCode.pro](https://VSCode.pro/?utm_source=sop)** covers:
+  - Professional workflows for HTML/CSS, JavaScript, PHP, and more
+  - 50+ essential extensions and how to use them
+  - Advanced customization and productivity tips
+  - Git workflows and Markdown mastery
+
+  <Info>
+    Perfect for developers who want to master their editor and boost productivity.
+  </Info>
+</Accordion>
+
+<Accordion title="How do I report bugs or request features?">
+  We love hearing from the community! Here's how to get in touch:
+
+  - **Bug Reports:** [Open an issue on GitHub](https://github.com/ahmadawais/shades-of-purple-vscode/issues)
+  - **Feature Requests:** [Start a discussion on GitHub](https://github.com/ahmadawais/shades-of-purple-vscode/discussions)
+  - **Questions:** Check existing [GitHub Issues](https://github.com/ahmadawais/shades-of-purple-vscode/issues) or start a new one
+
+  <Note>
+    Before opening a new issue, please search existing issues to see if your question has already been answered.
+  </Note>
+</Accordion>
+
+<Accordion title="Is the theme free? What's the license?">
+  Yes, Shades of Purple is completely free and open source!
+
+  - **License:** MIT Licensed
+  - **Copyright:** Ahmad Awais
+  - **Source Code:** [GitHub Repository](https://github.com/ahmadawais/shades-of-purple-vscode)
+
+  You're free to use it in personal and commercial projects. If you love it, consider:
+  - [Leaving a 5-star review](https://marketplace.visualstudio.com/items?itemName=ahmadawais.shades-of-purple&ssr=false#review-details)
+  - Sharing it with fellow developers
+  - Contributing to the project on GitHub
+</Accordion>
+
+## Still Have Questions?
+
+If you didn't find your answer here:
+
+1. Check the [Troubleshooting Guide](/support/troubleshooting) for common issues
+2. Browse [GitHub Issues](https://github.com/ahmadawais/shades-of-purple-vscode/issues) for similar questions
+3. [Open a new issue](https://github.com/ahmadawais/shades-of-purple-vscode/issues/new) with your question
+
+<Note>
+Shades of Purple is used by 5+ million developers worldwide with 175+ five-star ratings. Join our community and make coding more enjoyable!
+</Note>

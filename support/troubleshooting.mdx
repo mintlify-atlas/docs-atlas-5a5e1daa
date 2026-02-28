@@ -1,0 +1,314 @@
+---
+title: Troubleshooting Guide
+description: Solutions to common issues with Shades of Purple VSCode theme
+---
+
+## Troubleshooting Guide
+
+Running into issues with Shades of Purple? This guide will help you resolve the most common problems.
+
+## Theme Not Applying
+
+If you've installed the theme but it's not showing up or applying correctly:
+
+<Steps>
+  <Step title="Verify installation">
+    Open the Extensions panel (`Cmd+Shift+X` or `Ctrl+Shift+X`) and search for "Shades of Purple". Make sure it shows as **installed** and **enabled**.
+  </Step>
+  
+  <Step title="Select the theme">
+    Open the Command Palette (`Cmd+Shift+P` or `Ctrl+Shift+P`), type "Color Theme", and select **Preferences: Color Theme**. Choose **Shades of Purple** from the list.
+  </Step>
+  
+  <Step title="Reload VSCode">
+    If the theme still doesn't apply, reload VSCode:
+    - Open Command Palette (`Cmd+Shift+P` or `Ctrl+Shift+P`)
+    - Type "Reload Window"
+    - Select **Developer: Reload Window**
+  </Step>
+  
+  <Step title="Restart VSCode completely">
+    If reloading doesn't work, fully quit VSCode and restart it. Sometimes a complete restart is needed for theme changes to take effect.
+  </Step>
+</Steps>
+
+<Warning>
+  If the theme still doesn't apply after these steps, try uninstalling and reinstalling the extension.
+</Warning>
+
+## Colors Not Showing Correctly
+
+### Semantic Highlighting Conflicts
+
+VSCode's semantic highlighting can sometimes override theme colors, causing unexpected appearance.
+
+**Solution:** Disable semantic highlighting by adding this to your `settings.json`:
+
+```json
+{
+  "editor.semanticHighlighting.enabled": false
+}
+```
+
+<Info>
+  This is included in the [Recommended Settings](/customization/settings) for optimal theme appearance.
+</Info>
+
+### Workbench Color Customizations Conflict
+
+If you have custom workbench color settings, they may override the theme's colors.
+
+**Solution:** Check your `settings.json` for these settings:
+
+```json
+{
+  "workbench.colorCustomizations": {},
+  "editor.tokenColorCustomizations": {}
+}
+```
+
+If these exist and contain values, they may be overriding Shades of Purple. Try removing or commenting them out temporarily to test.
+
+### Font Rendering Issues
+
+Some fonts may not render colors as vibrantly as others.
+
+**Solution:** Try these font settings from the recommended configuration:
+
+```json
+{
+  "editor.fontFamily": "Operator Mono, Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontLigatures": true,
+  "workbench.fontAliasing": "auto"
+}
+```
+
+## Theme Not Appearing in Theme List
+
+If Shades of Purple doesn't show up in the Color Theme picker:
+
+<Steps>
+  <Step title="Check extension is enabled">
+    Go to Extensions panel and make sure the theme isn't disabled. Look for a "Disabled" label.
+  </Step>
+  
+  <Step title="Reload extensions">
+    Open Command Palette and run **Developer: Reload Window**
+  </Step>
+  
+  <Step title="Check for conflicts">
+    Disable other theme extensions temporarily to see if there's a conflict
+  </Step>
+  
+  <Step title="Reinstall the extension">
+    Uninstall Shades of Purple completely, reload VSCode, then reinstall it from the marketplace
+  </Step>
+</Steps>
+
+## Font Ligature Issues
+
+If font ligatures aren't working with the theme:
+
+### Ligatures Not Showing
+
+**Cause:** Font ligatures need to be explicitly enabled in VSCode.
+
+**Solution:** Add this to your `settings.json`:
+
+```json
+{
+  "editor.fontLigatures": true
+}
+```
+
+<Note>
+  Make sure you're using a font that supports ligatures, such as Fira Code, JetBrains Mono, Cascadia Code, or Operator Mono.
+</Note>
+
+### Ligatures Look Wrong
+
+Some ligature combinations may not look right with certain fonts.
+
+**Solution:** Try configuring specific ligature rules:
+
+```json
+{
+  "editor.fontLigatures": "'calt', 'liga', 'dlig', 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'zero'"
+}
+```
+
+Adjust the features based on what your font supports.
+
+## Italics Issues
+
+### Don't Want Italics
+
+Shades of Purple uses italics for certain syntax elements. If you prefer no italics:
+
+**Solution:** See the [FAQ on disabling italics](/support/faq#how-do-i-disable-italics-in-the-theme) for detailed configuration.
+
+### Italics Not Showing
+
+If you want italics but they're not appearing:
+
+**Cause:** Your font may not support italic variants.
+
+**Solution:** Use a font with italic support like Operator Mono, Fira Code, or JetBrains Mono:
+
+```json
+{
+  "editor.fontFamily": "'Fira Code', 'JetBrains Mono', Menlo, Monaco, monospace"
+}
+```
+
+## Extension Compatibility Issues
+
+### Highlight Matching Tag
+
+If the Highlight Matching Tag extension looks off with the theme:
+
+**Solution:** Use the recommended settings:
+
+```json
+{
+  "highlight-matching-tag.styles": {
+    "opening": {
+      "full": {
+        "highlight": "rgba(165, 153, 233, 0.3)"
+      }
+    }
+  }
+}
+```
+
+<Info>
+  See [GitHub Issue #20](https://github.com/ahmadawais/shades-of-purple-vscode/issues/20) for more details.
+</Info>
+
+### Indent Rainbow
+
+For better Indent Rainbow compatibility:
+
+**Solution:** Configure colors that match the theme:
+
+```json
+{
+  "indentRainbow.colors": [
+    "rgba(165, 153, 233, 0.1)",
+    "rgba(165, 153, 233, 0.2)",
+    "rgba(165, 153, 233, 0.3)",
+    "rgba(165, 153, 233, 0.4)",
+    "rgba(165, 153, 233, 0.5)",
+    "rgba(165, 153, 233, 0.6)"
+  ]
+}
+```
+
+<Info>
+  See [GitHub Issue #37](https://github.com/ahmadawais/shades-of-purple-vscode/issues/37) for the full discussion.
+</Info>
+
+### Import Cost
+
+To make Import Cost extension colors match Shades of Purple:
+
+**Solution:**
+
+```json
+{
+  "importCost.largePackageColor": "#EC3A37F5",
+  "importCost.mediumPackageColor": "#B362FF",
+  "importCost.smallPackageColor": "#B362FF"
+}
+```
+
+## Terminal Colors Issues
+
+If the integrated terminal colors look wrong:
+
+### Terminal Using Different Theme
+
+**Cause:** VSCode terminal may have separate color settings.
+
+**Solution:** Make sure you don't have terminal color overrides:
+
+```json
+{
+  // Remove or comment out if present:
+  // "workbench.colorCustomizations": {
+  //   "terminal.background": "...",
+  //   "terminal.foreground": "..."
+  // }
+}
+```
+
+### Want Shades of Purple in External Terminals
+
+The VSCode theme only affects the integrated terminal.
+
+**Solution:** Install Shades of Purple for your external terminal:
+
+- [iTerm2](https://github.com/ahmadawais/shades-of-purple-iterm2)
+- [Hyper](https://github.com/ahmadawais/shades-of-purple-hyper)
+- [Alacritty](https://github.com/ahmadawais/shades-of-purple-alacritty)
+- [Konsole](https://github.com/ahmadawais/shades-of-purple-konsole)
+- [Ghostty](https://github.com/ahmadawais/shades-of-purple-vscode) (pre-installed, just enable it)
+
+## Performance Issues
+
+Themes typically don't cause performance issues, but if you experience slowness:
+
+<Steps>
+  <Step title="Check for conflicting extensions">
+    Disable other theme-related extensions temporarily
+  </Step>
+  
+  <Step title="Reduce tokenization load">
+    Disable semantic highlighting:
+    ```json
+    {
+      "editor.semanticHighlighting.enabled": false
+    }
+    ```
+  </Step>
+  
+  <Step title="Check VSCode performance">
+    Open Command Palette and run **Developer: Startup Performance** to identify slow extensions
+  </Step>
+</Steps>
+
+## Still Having Issues?
+
+If none of these solutions work:
+
+1. **Check existing issues:** Browse [GitHub Issues](https://github.com/ahmadawais/shades-of-purple-vscode/issues) to see if others have reported the same problem
+
+2. **Create a new issue:** If your problem isn't listed, [open a new issue](https://github.com/ahmadawais/shades-of-purple-vscode/issues/new) with:
+   - Your VSCode version
+   - Your operating system
+   - Screenshots of the issue
+   - Your relevant settings from `settings.json`
+   - List of other installed extensions
+
+3. **Get help from the community:** Join the discussion on [GitHub Discussions](https://github.com/ahmadawais/shades-of-purple-vscode/discussions)
+
+<Note>
+  When reporting issues, providing detailed information helps maintainers solve your problem faster.
+</Note>
+
+## Quick Fixes Checklist
+
+Before opening an issue, try these quick fixes:
+
+- [ ] Reload VSCode window
+- [ ] Restart VSCode completely
+- [ ] Check theme is selected in Color Theme picker
+- [ ] Disable semantic highlighting
+- [ ] Remove custom color overrides
+- [ ] Update to latest version of Shades of Purple
+- [ ] Update VSCode to latest version
+- [ ] Check for conflicting extensions
+
+<Warning>
+  Always backup your `settings.json` before making significant changes!
+</Warning>

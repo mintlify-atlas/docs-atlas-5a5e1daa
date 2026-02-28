@@ -1,80 +1,271 @@
 ---
-title: "Quickstart"
-description: "Start building awesome documentation in minutes"
+title: Quick start guide
+description: Get up and running with Shades of Purple in minutes with this quick start guide
 ---
 
-## Get started in three steps
+# Quick start guide
 
-Get your documentation site running locally and make your first customization.
+This guide will help you get Shades of Purple set up and optimized for the best coding experience. Follow these steps to go from installation to a fully configured setup.
 
-### Step 1: Set up your local environment
+## Before you begin
 
-<AccordionGroup>
-  <Accordion icon="copy" title="Clone your docs locally">
-    During the onboarding process, you created a GitHub repository with your docs content if you didn't already have one. You can find a link to this repository in your [dashboard](https://dashboard.mintlify.com).
+Make sure you have:
+- VS Code version 1.15.0 or higher
+- 2-3 minutes to complete the setup
+
+## Install and activate
+
+<Steps>
+  <Step title="Install the theme">
+    If you haven't already installed Shades of Purple, open the Extensions sidebar (`Cmd/Ctrl+Shift+X`) and search for "Shades of Purple Theme". Click **Install**.
     
-    To clone the repository locally so that you can make and preview changes to your docs, follow the [Cloning a repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) guide in the GitHub docs.
-  </Accordion>
-  <Accordion icon="rectangle-terminal" title="Start the preview server">
-    1. Install the Mintlify CLI: `npm i -g mint`
-    2. Navigate to your docs directory and run: `mint dev`
-    3. Open `http://localhost:3000` to see your docs live!
+    [See detailed installation instructions →](/installation)
+  </Step>
+  
+  <Step title="Activate the theme">
+    Open the Color Theme picker:
+    - **macOS**: `Cmd+K` then `Cmd+T`
+    - **Windows/Linux**: `Ctrl+K` then `Ctrl+T`
     
-    <Tip>Your preview updates automatically as you edit files.</Tip>
-  </Accordion>
-</AccordionGroup>
+    Select **Shades of Purple** from the list.
+  </Step>
+  
+  <Step title="Verify the theme is active">
+    You should immediately see the purple color scheme applied. Look for:
+    - Purple background (#2D2B55)
+    - Vibrant syntax highlighting
+    - Purple accents in the UI
+  </Step>
+</Steps>
 
-### Step 2: Deploy your changes
+## What you should see
 
-<AccordionGroup>
-  <Accordion icon="github" title="Install our GitHub app">
-    Install the Mintlify GitHub app from your [dashboard](https://dashboard.mintlify.com/settings/organization/github-app).
-    
-    Our GitHub app automatically deploys your changes to your docs site, so you don't need to manage deployments yourself.
-</Accordion>
-<Accordion icon="palette" title="Update your site name and colors">
-    For a first change, let's update the name and colors of your docs site.
+Once activated, Shades of Purple transforms your entire VS Code interface:
 
-    1. Open `docs.json` in your editor.
-    2. Change the `"name"` field to your project name.
-    3. Update the `"colors"` to match your brand.
-    4. Save and see your changes instantly at `http://localhost:3000`.
+### Editor appearance
 
-    <Tip>Try changing the primary color to see an immediate difference!</Tip>
-  </Accordion>
-</AccordionGroup>
+- **Background**: Deep purple (#2D2B55) that's easy on the eyes
+- **Text**: Light purple-gray (#A599E9) for excellent readability
+- **Keywords**: Orange (#FF9D00) that stands out clearly
+- **Strings**: Bright green (#A5FF90) for easy identification
+- **Comments**: Muted purple (#B362FF) that doesn't distract
+- **Functions**: Pink (#FB94FF) for clear definition highlighting
 
-### Step 3: Go live
+### UI elements
 
-<Accordion icon="rocket" title="Publish your docs">
-  1. Commit and push your changes.
-  2. Your docs will update and be live in moments!
-</Accordion>
+- **Sidebar**: Dark purple background with vibrant highlights
+- **Activity bar**: Purple with orange accents on hover
+- **Status bar**: Purple with contextual color changes
+- **Tabs**: Clear active/inactive states with purple styling
+
+<Info>
+If you prefer a darker variant, try "Shades of Purple (Super Dark)" - currently in BETA but available in the Color Theme menu.
+</Info>
+
+## Recommended first steps
+
+Get the most out of Shades of Purple with these optional but recommended configurations.
+
+### Add a complementary icon theme
+
+For the complete visual experience, pair Shades of Purple with an icon theme:
+
+1. Open Settings (`Cmd/Ctrl+,`)
+2. Search for "File Icon Theme"
+3. Select **vscode-icons** (recommended) or your preferred icon pack
+
+Add to your `settings.json`:
+```json
+{
+  "workbench.iconTheme": "vscode-icons"
+}
+```
+
+### Disable semantic highlighting (optional)
+
+For the pure Shades of Purple experience as designed, you may want to disable semantic highlighting:
+
+```json
+{
+  "editor.semanticHighlighting.enabled": false
+}
+```
+
+<Note>
+Semantic highlighting can sometimes override theme colors in TypeScript and other languages. Disabling it ensures consistent Shades of Purple styling.
+</Note>
+
+### Adjust font settings (optional)
+
+While Shades of Purple works with any font, it pairs beautifully with fonts that support ligatures:
+
+```json
+{
+  "editor.fontFamily": "'Operator Mono', 'Fira Code', Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontSize": 16,
+  "editor.lineHeight": 24,
+  "editor.fontLigatures": true
+}
+```
+
+<Tip>
+**Operator Mono** is the recommended font for Shades of Purple, but **Fira Code** is a great free alternative with excellent ligature support.
+</Tip>
+
+## Test your setup
+
+Create a test file to see Shades of Purple in action:
+
+### JavaScript example
+
+```javascript
+// This is a comment in Shades of Purple
+import { useState } from 'react';
+
+const UserProfile = ({ name, email }) => {
+  const [isActive, setIsActive] = useState(true);
+  
+  const handleToggle = () => {
+    setIsActive(!isActive);
+  };
+  
+  return (
+    <div className="profile">
+      <h1>{name}</h1>
+      <p>{email}</p>
+      <button onClick={handleToggle}>
+        {isActive ? 'Deactivate' : 'Activate'}
+      </button>
+    </div>
+  );
+};
+
+export default UserProfile;
+```
+
+You should see:
+- **Orange** keywords (`const`, `return`, `import`)
+- **Pink** function names (`UserProfile`, `handleToggle`)
+- **Green** strings (`"profile"`, `"Deactivate"`)
+- **Purple** comments
+- **Cyan** JSX tags
+
+### Python example
+
+```python
+# Calculate factorial recursively
+def factorial(n):
+    """Return the factorial of n."""
+    if n <= 1:
+        return 1
+    return n * factorial(n - 1)
+
+result = factorial(5)
+print(f"The factorial is: {result}")
+```
+
+## Optimize for presentations
+
+If you use Shades of Purple for live coding or screen recordings:
+
+```json
+{
+  "editor.fontSize": 18,
+  "editor.lineHeight": 28,
+  "window.zoomLevel": 1,
+  "workbench.colorTheme": "Shades of Purple"
+}
+```
+
+<Tip>
+Shades of Purple is specifically designed for high contrast visibility, making it perfect for presentations and teaching.
+</Tip>
+
+## Configure terminal colors
+
+For a cohesive experience, match your integrated terminal to Shades of Purple:
+
+```json
+{
+  "terminal.integrated.fontFamily": "'Operator Mono', 'Inconsolata for Powerline', monospace"
+}
+```
+
+For a complete terminal experience, install the [Shades of Purple iTerm2 theme](https://github.com/ahmadawais/shades-of-purple-iterm2) or [Hyper theme](https://github.com/ahmadawais/shades-of-purple-hyper).
+
+## Advanced configuration (optional)
+
+For power users who want the ultimate Shades of Purple setup:
+
+```json
+{
+  "workbench.colorTheme": "Shades of Purple",
+  "workbench.iconTheme": "vscode-icons",
+  "editor.fontFamily": "Operator Mono, Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontSize": 17,
+  "editor.lineHeight": 24.65,
+  "editor.letterSpacing": 0.5,
+  "editor.fontWeight": "400",
+  "editor.fontLigatures": true,
+  "editor.cursorStyle": "line",
+  "editor.cursorWidth": 5,
+  "editor.cursorBlinking": "solid",
+  "editor.renderWhitespace": "all",
+  "editor.semanticHighlighting.enabled": false,
+  "workbench.fontAliasing": "auto"
+}
+```
+
+[See complete recommended settings →](#)
+
+## Extend to other apps
+
+Take Shades of Purple beyond VS Code:
+
+<CardGroup cols={2}>
+  <Card title="iTerm2 theme" icon="terminal" href="https://github.com/ahmadawais/shades-of-purple-iterm2">
+    Beautiful terminal for macOS
+  </Card>
+  <Card title="Hyper theme" icon="window" href="https://github.com/ahmadawais/shades-of-purple-hyper">
+    Electron-based terminal
+  </Card>
+  <Card title="Chrome theme" icon="chrome" href="https://chrome.google.com/webstore/detail/ljeonhoonibcofjepiphcekbihoiaife">
+    Browser theme for Chrome
+  </Card>
+  <Card title="Slack theme" icon="slack" href="https://github.com/ahmadawais/shades-of-purple-slack">
+    Team collaboration theme
+  </Card>
+</CardGroup>
+
+## Troubleshooting
+
+### Colors not showing correctly
+
+1. Verify the theme is active: `Cmd/Ctrl+K` then `Cmd/Ctrl+T` > "Shades of Purple"
+2. Disable semantic highlighting (see above)
+3. Check for conflicting color customizations in settings.json
+
+### Theme looks washed out
+
+1. Check your monitor's brightness and contrast settings
+2. Ensure you selected "Shades of Purple" not "Shades of Purple (Super Dark)"
+3. Try adjusting `workbench.fontAliasing` to `"auto"` or `"antialiased"`
+
+<Warning>
+Some color calibration software or night mode apps can affect how Shades of Purple appears. Try temporarily disabling them to see the theme as intended.
+</Warning>
 
 ## Next steps
 
-Now that you have your docs running, explore these key features:
+You're all set! Here's what to explore next:
 
-<CardGroup cols={2}>
+- [View the complete color palette](#) to understand all color choices
+- [Explore advanced settings](#) for power users
+- [Join 175+ developers](https://marketplace.visualstudio.com/items?itemName=ahmadawais.shades-of-purple&ssr=false#review-details) who rated it five stars
+- [Learn VSCode](https://VSCode.pro/?utm_source=sop) with a comprehensive video course
 
-<Card title="Write Content" icon="pen-to-square" href="/essentials/markdown">
-  Learn MDX syntax and start writing your documentation.
-</Card>
+---
 
-<Card title="Customize style" icon="palette" href="/essentials/settings">
-  Make your docs match your brand perfectly.
-</Card>
-
-<Card title="Add code examples" icon="square-code" href="/essentials/code">
-  Include syntax-highlighted code blocks.
-</Card>
-
-<Card title="API documentation" icon="code" href="/api-reference/introduction">
-  Auto-generate API docs from OpenAPI specs.
-</Card>
-
-</CardGroup>
-
-<Note>
-  **Need help?** See our [full documentation](https://mintlify.com/docs) or join our [community](https://mintlify.com/community).
-</Note>
+<Info>
+Questions or feedback? Connect with the creator [Ahmad Awais on Twitter](https://twitter.com/mrahmadawais/).
+</Info>

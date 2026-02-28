@@ -1,0 +1,323 @@
+---
+title: Complete Color Palette Reference
+description: The carefully selected color palette used by Shades of Purple theme
+---
+
+Shades of Purple uses a carefully selected palette optimized for contrast and readability. Use this reference when creating matching assets, ports, or customizations.
+
+## Core Color Palette
+
+These are the hand-picked colors that make up the Shades of Purple theme:
+
+| Usage | Color Preview | Hex Code | RGB |
+|-------|---------------|----------|-----|
+| Background | ![#2D2B55](https://img.shields.io/badge/2D2B55-2D2B55?style=flat-square) | `#2D2B55` | rgb(45, 43, 85) |
+| Background Dark | ![#1E1E3F](https://img.shields.io/badge/1E1E3F-1E1E3F?style=flat-square) | `#1E1E3F` | rgb(30, 30, 63) |
+| Foreground | ![#A599E9](https://img.shields.io/badge/A599E9-A599E9?style=flat-square) | `#A599E9` | rgb(165, 153, 233) |
+| Hover Background | ![#4D21FC](https://img.shields.io/badge/4D21FC-4D21FC?style=flat-square) | `#4D21FC` | rgb(77, 33, 252) |
+| Contrast | ![#FAD000](https://img.shields.io/badge/FAD000-FAD000?style=flat-square) | `#FAD000` | rgb(250, 208, 0) |
+| Contrast Lite | ![#FFEE80](https://img.shields.io/badge/FFEE80-FFEE80?style=flat-square) | `#FFEE80` | rgb(255, 238, 128) |
+| Contrast Lite II | ![#FAEFA5](https://img.shields.io/badge/FAEFA5-FAEFA5?style=flat-square) | `#FAEFA5` | rgb(250, 239, 165) |
+| Highlight | ![#FF7200](https://img.shields.io/badge/FF7200-FF7200?style=flat-square) | `#FF7200` | rgb(255, 114, 0) |
+| Comment | ![#B362FF](https://img.shields.io/badge/B362FF-B362FF?style=flat-square) | `#B362FF` | rgb(179, 98, 255) |
+| Constants | ![#FF628C](https://img.shields.io/badge/FF628C-FF628C?style=flat-square) | `#FF628C` | rgb(255, 98, 140) |
+| Keywords | ![#FF9D00](https://img.shields.io/badge/FF9D00-FF9D00?style=flat-square) | `#FF9D00` | rgb(255, 157, 0) |
+| Other | ![#9EFFFF](https://img.shields.io/badge/9EFFFF-9EFFFF?style=flat-square) | `#9EFFFF` | rgb(158, 255, 255) |
+| Strings | ![#A5FF90](https://img.shields.io/badge/A5FF90-A5FF90?style=flat-square) | `#A5FF90` | rgb(165, 255, 144) |
+| Templates | ![#3AD900](https://img.shields.io/badge/3AD900-3AD900?style=flat-square) | `#3AD900` | rgb(58, 217, 0) |
+| Definitions | ![#FB94FF](https://img.shields.io/badge/FB94FF-FB94FF?style=flat-square) | `#FB94FF` | rgb(251, 148, 255) |
+| Invalid | ![#EC3A37](https://img.shields.io/badge/EC3A37-EC3A37?style=flat-square) | `#EC3A37F5` | rgb(236, 58, 55) |
+| Diff Added | ![#00FF00](https://img.shields.io/badge/00FF00-00FF00?style=flat-square) | `#00FF009A` | rgb(0, 255, 0, 0.6) |
+| Diff Removed | ![#FF000D](https://img.shields.io/badge/FF000D-FF000D?style=flat-square) | `#FF000D81` | rgb(255, 0, 13, 0.5) |
+
+## Color Usage Examples
+
+<AccordionGroup>
+  <Accordion title="Background Colors">
+    ### Background (`#2D2B55`)
+    The main editor background color. Used for:
+    - Editor canvas
+    - Active tabs
+    - Selected list items
+    
+    ### Background Dark (`#1E1E3F`)
+    A darker shade for contrast. Used for:
+    - Sidebar backgrounds
+    - Panel backgrounds (terminal, output, debug console)
+    - Status bar
+    - Dropdown menus
+    - Inactive tabs
+    
+    ```json
+    "editor.background": "#2D2B55",
+    "sideBar.background": "#222244",
+    "panel.background": "#1E1E3F",
+    "statusBar.background": "#1E1E3F"
+    ```
+  </Accordion>
+  
+  <Accordion title="Foreground & Text Colors">
+    ### Foreground (`#A599E9`)
+    The primary text color. Used for:
+    - Sidebar text
+    - Menu items
+    - Settings labels
+    - Line numbers
+    
+    ### White (`#FFFFFF`)
+    Bright white for high contrast. Used for:
+    - Active editor text
+    - Active tab text
+    - Selected item text
+    
+    ```json
+    "editor.foreground": "#FFFFFF",
+    "editorLineNumber.foreground": "#A599E9",
+    "sideBar.foreground": "#A599E9"
+    ```
+  </Accordion>
+  
+  <Accordion title="Syntax Highlighting Colors">
+    ### Keywords (`#FF9D00`)
+    Orange for programming keywords:
+    ```js
+    // Keywords in orange
+    const function = async () => {
+      return await fetch();
+    }
+    ```
+    
+    ### Strings (`#A5FF90`)
+    Light green for string literals:
+    ```js
+    const message = "Hello World"; // Green string
+    ```
+    
+    ### Template Strings (`#3AD900`)
+    Darker green for template literals:
+    ```js
+    const template = `Value: ${value}`; // Dark green
+    ```
+    
+    ### Comments (`#B362FF`)
+    Purple for comments:
+    ```js
+    // This comment is purple
+    /* Multi-line comments too */
+    ```
+    
+    ### Constants (`#FF628C`)
+    Pink for constants and numbers:
+    ```js
+    const PI = 3.14159; // Pink constant and number
+    ```
+    
+    ### Definitions (`#FB94FF`)
+    Light purple for function/class definitions:
+    ```js
+    function myFunction() { } // "function" keyword
+    class MyClass { } // "this", "super"
+    ```
+  </Accordion>
+  
+  <Accordion title="UI Accent Colors">
+    ### Contrast/Accent (`#FAD000`)
+    Yellow for important UI elements:
+    - Cursor color
+    - Active borders
+    - Panel title borders
+    - Progress bars
+    - Badges
+    
+    ### Hover Background (`#4D21FC`)
+    Bright purple for hover states:
+    - Scrollbar hover
+    - Button hover
+    - Status bar item hover
+    
+    ### Highlight (`#FF7200`)
+    Orange for search matches and highlights:
+    - Current search match
+    - Git conflict markers
+    
+    ```json
+    "editorCursor.foreground": "#FAD000",
+    "tab.activeBorder": "#FAD000",
+    "scrollbarSlider.hoverBackground": "#4D21FC",
+    "editor.findMatchBackground": "#ff7300ab"
+    ```
+  </Accordion>
+  
+  <Accordion title="Git & Diff Colors">
+    ### Added (`#00FF009A`)
+    Green for added lines:
+    ```diff
+    + Added line in git diff
+    ```
+    
+    ### Removed (`#FF000D81`)
+    Red for deleted lines:
+    ```diff
+    - Removed line in git diff
+    ```
+    
+    ### Modified (`#FAD000`)
+    Yellow for modified files:
+    - Modified file icon in explorer
+    - Modified indicator in gutter
+    
+    ```json
+    "gitDecoration.modifiedResourceForeground": "#FAD000",
+    "gitDecoration.deletedResourceForeground": "#EC3A37F5",
+    "gitDecoration.untrackedResourceForeground": "#3AD900"
+    ```
+  </Accordion>
+  
+  <Accordion title="Status Colors">
+    ### Error (`#EC3A37F5`)
+    Red for errors and problems:
+    - Error squiggles
+    - Error icons
+    - Deleted git resources
+    
+    ### Warning (`#FAD000`)
+    Yellow for warnings:
+    - Warning squiggles
+    - Warning icons
+    
+    ### Info (`#9EFFFF`)
+    Cyan for information:
+    - Info icons
+    - Hints
+    
+    ```json
+    "editorError.foreground": "#EC3A37F5",
+    "editorWarning.foreground": "#FAD000"
+    ```
+  </Accordion>
+</AccordionGroup>
+
+## Terminal Colors (ANSI)
+
+Shades of Purple includes a complete ANSI color palette for terminals:
+
+| Color | Normal | Bright | Hex Normal | Hex Bright |
+|-------|--------|--------|------------|------------|
+| Black | Black | Bright Black | `#000000` | `#5C5C61` |
+| Red | Red | Bright Red | `#EC3A37F5` | `#EC3A37F5` |
+| Green | Green | Bright Green | `#3AD900` | `#3AD900` |
+| Yellow | Yellow | Bright Yellow | `#FAD000` | `#FAD000` |
+| Blue | Blue | Bright Blue | `#7857fe` | `#6943FF` |
+| Magenta | Magenta | Bright Magenta | `#FF2C70` | `#FB94FF` |
+| Cyan | Cyan | Bright Cyan | `#80FCFF` | `#80FCFF` |
+| White | White | Bright White | `#FFFFFF` | `#FFFFFF` |
+
+<Note>
+  These terminal colors are used in the integrated VSCode terminal and can be applied to external terminals like iTerm2, Hyper, and Alacritty.
+</Note>
+
+## Using the Color Palette
+
+<CardGroup cols={2}>
+  <Card title="Creating a Port" icon="code-branch">
+    Use these exact hex codes when porting Shades of Purple to a new platform for consistency.
+  </Card>
+  
+  <Card title="Custom Assets" icon="paintbrush">
+    Match your screenshots, diagrams, and presentations to these colors.
+  </Card>
+  
+  <Card title="Documentation Sites" icon="book">
+    Use the syntax highlighting colors for code blocks on your website.
+  </Card>
+  
+  <Card title="Extensions" icon="puzzle-piece">
+    Configure third-party extensions with these colors for a cohesive look.
+  </Card>
+</CardGroup>
+
+## Color Contrast & Accessibility
+
+The Shades of Purple palette is designed with readability in mind:
+
+- **High contrast** between background (`#2D2B55`) and text (`#FFFFFF`) ensures comfortable reading
+- **Color differentiation** makes syntax elements easily distinguishable
+- **Strategic use of brightness** helps important elements stand out
+- **Consistent color roles** across all ports maintains familiarity
+
+<Warning>
+  When modifying these colors, ensure sufficient contrast ratios for accessibility. The theme achieves WCAG AA compliance for most text elements.
+</Warning>
+
+## Export Formats
+
+<AccordionGroup>
+  <Accordion title="JSON Color Theme Export">
+    You can find the complete color definitions in the theme JSON file:
+    
+    ```json
+    {
+      "colors": {
+        "editor.background": "#2D2B55",
+        "editor.foreground": "#FFFFFF",
+        "activityBar.background": "#28284E",
+        // ... 100+ more color definitions
+      }
+    }
+    ```
+    
+    View the [complete theme JSON](https://github.com/ahmadawais/shades-of-purple-vscode/blob/master/themes/shades-of-purple-color-theme.json) on GitHub.
+  </Accordion>
+  
+  <Accordion title="CSS Variables Export">
+    For web projects, you can use CSS custom properties:
+    
+    ```css
+    :root {
+      --sop-background: #2D2B55;
+      --sop-background-dark: #1E1E3F;
+      --sop-foreground: #A599E9;
+      --sop-contrast: #FAD000;
+      --sop-keywords: #FF9D00;
+      --sop-strings: #A5FF90;
+      --sop-comments: #B362FF;
+      --sop-constants: #FF628C;
+    }
+    ```
+  </Accordion>
+  
+  <Accordion title="SCSS Variables Export">
+    For SCSS projects:
+    
+    ```scss
+    $sop-background: #2D2B55;
+    $sop-background-dark: #1E1E3F;
+    $sop-foreground: #A599E9;
+    $sop-contrast: #FAD000;
+    $sop-keywords: #FF9D00;
+    $sop-strings: #A5FF90;
+    $sop-comments: #B362FF;
+    $sop-constants: #FF628C;
+    ```
+  </Accordion>
+</AccordionGroup>
+
+## Related Resources
+
+<CardGroup cols={2}>
+  <Card title="Theme Ports" icon="globe" href="/guides/other-platforms">
+    See how these colors are used across different platforms
+  </Card>
+  
+  <Card title="Extension Settings" icon="sliders" href="/guides/extensions">
+    Configure extensions with matching colors
+  </Card>
+  
+  <Card title="GitHub Repository" icon="github" href="https://github.com/ahmadawais/shades-of-purple-vscode">
+    View the complete theme source code
+  </Card>
+  
+  <Card title="VSCode.pro Course" icon="graduation-cap" href="https://VSCode.pro/?utm_source=sop">
+    Master VSCode with this comprehensive course
+  </Card>
+</CardGroup>

@@ -1,0 +1,263 @@
+---
+title: Font Setup
+description: Configure the perfect font settings for Shades of Purple theme
+---
+
+While Shades of Purple works with any monospace font, the theme truly shines with a quality coding font. This guide covers font configuration and recommendations.
+
+## Recommended Font: Operator Mono
+
+Shades of Purple is optimized for **Operator Mono**, a premium coding font that features beautiful italics and ligatures. However, the theme works excellently with other fonts too.
+
+<Note>
+  Operator Mono is a paid font. See the alternatives section below for free options.
+</Note>
+
+## Font Configuration
+
+Here are the recommended font settings for VSCode:
+
+```json
+{
+  "editor.fontFamily": "Operator Mono, Menlo, Monaco, 'Courier New', monospace",
+  "terminal.integrated.fontFamily": "'Operator Mono', 'Inconsolata for Powerline', monospace",
+  "editor.fontSize": 17,
+  "editor.lineHeight": 24.65,
+  "editor.letterSpacing": 0.5,
+  "editor.fontWeight": "400",
+  "editor.fontLigatures": true
+}
+```
+
+## Font Settings Explained
+
+<Accordion title="Font Family">
+  ```json
+  "editor.fontFamily": "Operator Mono, Menlo, Monaco, 'Courier New', monospace"
+  ```
+  
+  This setting defines a fallback chain:
+  1. **Operator Mono** - Primary choice with beautiful italics
+  2. **Menlo** - macOS default monospace font
+  3. **Monaco** - Classic macOS coding font
+  4. **Courier New** - Cross-platform fallback
+  5. **monospace** - System default monospace
+  
+  The editor will use the first available font from this list.
+</Accordion>
+
+<Accordion title="Terminal Font Family">
+  ```json
+  "terminal.integrated.fontFamily": "'Operator Mono', 'Inconsolata for Powerline', monospace"
+  ```
+  
+  Separate font configuration for the integrated terminal:
+  - Maintains consistency with editor font
+  - Includes Powerline support for enhanced terminal prompts
+  - Falls back to system monospace if others unavailable
+</Accordion>
+
+<Accordion title="Font Size">
+  ```json
+  "editor.fontSize": 17
+  ```
+  
+  17 pixels provides:
+  - Comfortable reading size for extended coding sessions
+  - Good balance between screen real estate and readability
+  - Optimal size for 1080p and higher resolution displays
+  
+  <Info>
+    Adjust based on your display size and personal preference. Common sizes range from 14-18px.
+  </Info>
+</Accordion>
+
+<Accordion title="Line Height">
+  ```json
+  "editor.lineHeight": 24.65
+  ```
+  
+  This setting:
+  - Provides ~1.45x the font size as line height
+  - Creates breathing room between lines
+  - Reduces eye strain during long coding sessions
+  - Works harmoniously with the purple color palette
+</Accordion>
+
+<Accordion title="Letter Spacing">
+  ```json
+  "editor.letterSpacing": 0.5
+  ```
+  
+  Half-pixel letter spacing:
+  - Adds subtle breathing room between characters
+  - Improves character distinction
+  - Enhances readability without affecting code density
+</Accordion>
+
+<Accordion title="Font Weight">
+  ```json
+  "editor.fontWeight": "400"
+  ```
+  
+  Normal weight (400) provides:
+  - Standard font thickness
+  - Good contrast with bold syntax highlighting
+  - Reduced eye strain compared to lighter weights
+  
+  <Note>
+    Some fonts support multiple weights (300, 400, 500, 600, etc.). Experiment to find what works for you.
+  </Note>
+</Accordion>
+
+<Accordion title="Font Ligatures">
+  ```json
+  "editor.fontLigatures": true
+  ```
+  
+  Enables font ligatures that combine character sequences into single glyphs:
+  - `=>` becomes a single arrow symbol
+  - `!=` becomes a proper not-equal sign
+  - `>=` and `<=` become proper comparison symbols
+  
+  <Warning>
+    Ligatures require a font that supports them (like Operator Mono, Fira Code, or JetBrains Mono). This setting has no effect with fonts that don't include ligatures.
+  </Warning>
+</Accordion>
+
+## Installing Operator Mono
+
+<Steps>
+  <Step title="Purchase the Font">
+    Visit the [Operator Mono website](https://www.typography.com/fonts/operator/overview) to purchase and download the font files.
+  </Step>
+  
+  <Step title="Install the Font">
+    **macOS:** Double-click the font files (.otf) and click "Install Font"
+    
+    **Windows:** Right-click the font files and select "Install" or "Install for all users"
+    
+    **Linux:** Copy font files to `~/.local/share/fonts/` and run `fc-cache -f -v`
+  </Step>
+  
+  <Step title="Restart VSCode">
+    Close and reopen VSCode for the font to be recognized.
+  </Step>
+  
+  <Step title="Configure Settings">
+    Add the font configuration to your VSCode settings.json file.
+  </Step>
+</Steps>
+
+## Free Font Alternatives
+
+If you prefer free options, these fonts work beautifully with Shades of Purple:
+
+<CodeGroup>
+```json Fira Code
+{
+  "editor.fontFamily": "Fira Code, monospace",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 14,
+  "editor.lineHeight": 21
+}
+```
+
+```json JetBrains Mono
+{
+  "editor.fontFamily": "JetBrains Mono, monospace",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 13,
+  "editor.lineHeight": 20
+}
+```
+
+```json Cascadia Code
+{
+  "editor.fontFamily": "Cascadia Code, monospace",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 14,
+  "editor.lineHeight": 21
+}
+```
+
+```json Source Code Pro
+{
+  "editor.fontFamily": "Source Code Pro, monospace",
+  "editor.fontSize": 14,
+  "editor.lineHeight": 21
+}
+```
+</CodeGroup>
+
+### Font Comparison
+
+| Font | Ligatures | Italics | License | Best For |
+|------|-----------|---------|---------|----------|
+| **Operator Mono** | Yes | Beautiful | Paid | Premium experience |
+| **Fira Code** | Yes | Standard | Free (OFL) | Ligature lovers |
+| **JetBrains Mono** | Yes | Good | Free (OFL) | Modern coding |
+| **Cascadia Code** | Yes | Good | Free (OFL) | Windows users |
+| **Source Code Pro** | No | Standard | Free (OFL) | Classic look |
+
+## Disabling Italics
+
+If you prefer to disable italics while keeping your font choice:
+
+```json
+{
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": [
+          "comment",
+          "storage.modifier",
+          "entity.other.attribute-name",
+          "markup.italic.markdown"
+        ],
+        "settings": {
+          "fontStyle": ""
+        }
+      }
+    ]
+  }
+}
+```
+
+<Info>
+  For more details on disabling italics, see the [FAQ on GitHub](https://github.com/ahmadawais/shades-of-purple-vscode/issues/13#issuecomment-416182574).
+</Info>
+
+## Troubleshooting
+
+### Font Not Showing Up
+
+1. Ensure the font is properly installed on your system
+2. Check the exact font name in your system's font manager
+3. Restart VSCode after installing fonts
+4. Try wrapping the font name in quotes if it contains spaces
+
+### Ligatures Not Working
+
+1. Verify your font supports ligatures
+2. Ensure `"editor.fontLigatures": true` is in your settings
+3. Try restarting VSCode
+4. Check if the font family name is correct
+
+### Font Looks Blurry
+
+```json
+{
+  "workbench.fontAliasing": "auto"
+}
+```
+
+This setting (macOS) adjusts font smoothing for optimal clarity.
+
+## Next Steps
+
+Now that your fonts are configured:
+
+- Explore [Customization Options](/configuration/customization) to personalize colors
+- Review [Recommended Settings](/configuration/recommended-settings) for the complete configuration
+- Check out the [Color Palette Reference](/getting-started/color-palette) for theme colors

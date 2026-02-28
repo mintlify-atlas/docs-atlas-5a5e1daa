@@ -1,0 +1,195 @@
+---
+title: Recommended Settings
+description: Optimize your VSCode experience with these carefully curated settings for Shades of Purple
+---
+
+Shades of Purple works beautifully out of the box. However, for the ultimate coding experience, especially if you use **Operator Mono** or a similar font, these custom settings will enhance your workflow.
+
+<Note>
+  These settings are completely optional. The theme works perfectly with your existing configuration.
+</Note>
+
+## Complete Settings Configuration
+
+Here's the complete recommended settings JSON you can add to your VSCode `settings.json` file:
+
+```json
+{
+  // Theme Setup
+  "workbench.colorTheme": "Shades of Purple",
+  "workbench.iconTheme": "vscode-icons",
+
+  // Font Settings (Operator Mono recommended)
+  "editor.fontFamily": "Operator Mono, Menlo, Monaco, 'Courier New', monospace",
+  "terminal.integrated.fontFamily": "'Operator Mono', 'Inconsolata for Powerline', monospace",
+  "editor.fontSize": 17,
+  "editor.lineHeight": 24.65,
+  "editor.letterSpacing": 0.5,
+  "editor.fontWeight": "400",
+  "editor.fontLigatures": true,
+
+  // Cursor Settings
+  "editor.cursorStyle": "line",
+  "editor.cursorWidth": 5,
+  "editor.cursorBlinking": "solid",
+
+  // Editor Behavior
+  "editor.renderWhitespace": "all",
+  "editor.snippetSuggestions": "top",
+  "editor.glyphMargin": true,
+  "workbench.editor.enablePreview": false,
+  "workbench.startupEditor": "newUntitledFile",
+
+  // File Management
+  "explorer.confirmDragAndDrop": false,
+  "files.trimTrailingWhitespace": true,
+  "files.trimFinalNewlines": true,
+
+  // Formatting (Optional)
+  "editor.formatOnSave": true,
+  "prettier.eslintIntegration": true,
+  "eslint.run": "onType",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+
+  // macOS Specific
+  "workbench.fontAliasing": "auto",
+  "terminal.integrated.macOptionIsMeta": true,
+  "workbench.statusBar.feedback.visible": false,
+
+  // Semantic Highlighting
+  "editor.semanticHighlighting.enabled": false,
+
+  // Extension Settings for Shades of Purple
+  "highlight-matching-tag.styles": {
+    "opening": {
+      "full": {
+        "highlight": "rgba(165, 153, 233, 0.3)"
+      }
+    }
+  },
+  "importCost.largePackageColor": "#EC3A37F5",
+  "importCost.mediumPackageColor": "#B362FF",
+  "importCost.smallPackageColor": "#B362FF"
+}
+```
+
+## Settings Breakdown
+
+Let's explore what each section of these settings does:
+
+<Accordion title="Theme Setup">
+  These settings configure the core visual appearance of VSCode:
+  
+  - `workbench.colorTheme`: Sets Shades of Purple as your color theme
+  - `workbench.iconTheme`: Recommends VSCode Icons for a cohesive look
+</Accordion>
+
+<Accordion title="Font Configuration">
+  Font settings optimize readability and aesthetics:
+  
+  - `editor.fontFamily`: Sets Operator Mono as primary font with fallbacks
+  - `terminal.integrated.fontFamily`: Configures terminal font for consistency
+  - `editor.fontSize`: 17px provides comfortable reading size
+  - `editor.lineHeight`: 24.65px gives proper spacing between lines
+  - `editor.letterSpacing`: 0.5px adds breathing room between characters
+  - `editor.fontWeight`: Normal weight (400) for reduced eye strain
+  - `editor.fontLigatures`: Enables beautiful code ligatures
+  
+  See the [Font Setup Guide](/configuration/font-setup) for detailed font installation instructions.
+</Accordion>
+
+<Accordion title="Cursor Styling">
+  Cursor settings enhance visibility:
+  
+  - `editor.cursorStyle`: Line cursor for precise positioning
+  - `editor.cursorWidth`: 5px width makes cursor more visible
+  - `editor.cursorBlinking`: Solid cursor reduces distractions
+</Accordion>
+
+<Accordion title="Editor Behavior">
+  These settings improve your coding workflow:
+  
+  - `editor.renderWhitespace`: Shows all whitespace characters
+  - `editor.snippetSuggestions`: Prioritizes snippets at top of autocomplete
+  - `editor.glyphMargin`: Enables the margin for breakpoints and icons
+  - `workbench.editor.enablePreview`: Disables preview mode for faster navigation
+  - `workbench.startupEditor`: Opens blank file on startup
+</Accordion>
+
+<Accordion title="File Management">
+  Automated file cleanup settings:
+  
+  - `explorer.confirmDragAndDrop`: Disables drag-and-drop confirmation
+  - `files.trimTrailingWhitespace`: Removes trailing whitespace on save
+  - `files.trimFinalNewlines`: Ensures consistent file endings
+</Accordion>
+
+<Accordion title="Formatting & Linting">
+  Optional settings for code quality:
+  
+  - `editor.formatOnSave`: Automatically formats code when saving
+  - `prettier.eslintIntegration`: Integrates Prettier with ESLint
+  - `eslint.run`: Runs ESLint as you type
+  - `editor.codeActionsOnSave`: Auto-fixes ESLint issues on save
+  
+  <Info>
+    These require Prettier and ESLint extensions to be installed.
+  </Info>
+</Accordion>
+
+<Accordion title="Platform-Specific Settings">
+  macOS optimizations:
+  
+  - `workbench.fontAliasing`: Auto font smoothing for macOS
+  - `terminal.integrated.macOptionIsMeta`: Enables Option key as Meta in terminal
+  - `workbench.statusBar.feedback.visible`: Hides feedback smiley icon
+</Accordion>
+
+<Accordion title="Semantic Highlighting">
+  - `editor.semanticHighlighting.enabled`: Disabled to preserve theme's carefully crafted syntax colors
+  
+  <Warning>
+    Enabling semantic highlighting may override some of the theme's color choices.
+  </Warning>
+</Accordion>
+
+<Accordion title="Extension-Specific Settings">
+  Recommended settings for popular extensions:
+  
+  **Highlight Matching Tag**
+  - Highlights matching HTML/JSX tags with purple transparency
+  - Uses `rgba(165, 153, 233, 0.3)` to match the theme's color palette
+  
+  **Import Cost**
+  - `importCost.largePackageColor`: Red for large imports (`#EC3A37F5`)
+  - `importCost.mediumPackageColor`: Purple for medium imports (`#B362FF`)
+  - `importCost.smallPackageColor`: Purple for small imports (`#B362FF`)
+  
+  These colors integrate seamlessly with Shades of Purple.
+</Accordion>
+
+## How to Apply These Settings
+
+<Steps>
+  <Step title="Open Settings JSON">
+    Press `Cmd+Shift+P` (macOS) or `Ctrl+Shift+P` (Windows/Linux), then type "Preferences: Open Settings (JSON)" and select it.
+  </Step>
+  
+  <Step title="Add Settings">
+    Copy the settings you want from the configuration above and paste them into your `settings.json` file.
+  </Step>
+  
+  <Step title="Save & Reload">
+    Save the file. Some settings take effect immediately, others may require reloading VSCode.
+  </Step>
+</Steps>
+
+## Bonus: Custom VSCode Icon
+
+Want to complete the purple experience? Download the custom [Shades of Purple VSCode icon](https://github.com/ahmadawais/shades-of-purple-vscode/raw/master/images/icon/logo.icns).
+
+<Info>
+  Icon installation instructions are based on the excellent work by [VSCode Icons](https://github.com/dhanishgajjar/vscode-icons#how-to-install).
+</Info>

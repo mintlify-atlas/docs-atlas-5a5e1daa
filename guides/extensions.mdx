@@ -1,0 +1,162 @@
+---
+title: Compatible VSCode Extensions
+description: Recommended VSCode extensions that work perfectly with Shades of Purple theme
+---
+
+Shades of Purple works beautifully with many VSCode extensions. Here are the recommended extensions and their configurations for the best experience.
+
+## Essential Extensions
+
+<CardGroup cols={2}>
+  <Card title="Highlight Matching Tag" icon="tag" href="https://marketplace.visualstudio.com/items?itemName=vincaslt.highlight-matching-tag">
+    Highlights matching opening and closing tags in HTML/JSX
+  </Card>
+  
+  <Card title="Import Cost" icon="dollar-sign" href="https://marketplace.visualstudio.com/items?itemName=wix.vscode-import-cost">
+    Display inline the size of the imported package
+  </Card>
+  
+  <Card title="VSCode Icons" icon="icons" href="https://marketplace.visualstudio.com/items?itemName=vscode-icons-team.vscode-icons">
+    Beautiful file icons that complement the purple theme
+  </Card>
+  
+  <Card title="Indent Rainbow" icon="rainbow" href="https://marketplace.visualstudio.com/items?itemName=oderwat.indent-rainbow">
+    Colorizes indentation for better code readability
+  </Card>
+</CardGroup>
+
+## Extension Configurations
+
+### Highlight Matching Tag
+
+This extension highlights matching HTML/JSX tags when you click on them. Configure it with these purple-themed colors:
+
+```json
+"highlight-matching-tag.styles": {
+  "opening": {
+    "full": {
+      "highlight": "rgba(165, 153, 233, 0.3)"
+    }
+  }
+}
+```
+
+The purple highlight (`#A599E9` with 30% opacity) perfectly matches the theme's color palette.
+
+### Import Cost
+
+Import Cost shows the size of imported JavaScript packages. Configure it with Shades of Purple colors:
+
+```json
+"importCost.largePackageColor": "#EC3A37F5",
+"importCost.mediumPackageColor": "#B362FF",
+"importCost.smallPackageColor": "#B362FF"
+```
+
+<Accordion title="Color Breakdown">
+  - **Large packages** (red `#EC3A37F5`): Stand out as potential issues
+  - **Medium packages** (purple `#B362FF`): Use the theme's comment color
+  - **Small packages** (purple `#B362FF`): Blend nicely with the theme
+</Accordion>
+
+### VSCode Icons
+
+Set VSCode Icons as your icon theme in your settings:
+
+```json
+"workbench.iconTheme": "vscode-icons"
+```
+
+<Note>
+  Want to go all-in on purple? Try the custom [Shades of Purple VSCode icon](https://github.com/ahmadawais/shades-of-purple-vscode/raw/master/images/icon/logo.icns) for your application.
+</Note>
+
+### Indent Rainbow
+
+For Indent Rainbow configuration that works well with Shades of Purple, you can customize the indent colors to match the purple theme palette. [See this issue](https://github.com/ahmadawais/shades-of-purple-vscode/issues/37) for recommended settings.
+
+## Extension Compatibility Tips
+
+<AccordionGroup>
+  <Accordion title="Disabling Semantic Highlighting">
+    Some extensions work better with semantic highlighting disabled:
+    
+    ```json
+    "editor.semanticHighlighting.enabled": false
+    ```
+    
+    This ensures the theme's hand-picked syntax colors remain consistent.
+  </Accordion>
+  
+  <Accordion title="Font Ligatures">
+    If using a font with ligatures (like Operator Mono or Fira Code), enable them:
+    
+    ```json
+    "editor.fontLigatures": true
+    ```
+    
+    This works beautifully with the theme's syntax highlighting.
+  </Accordion>
+  
+  <Accordion title="Prettier Integration">
+    For formatting extensions like Prettier:
+    
+    ```json
+    "editor.formatOnSave": true,
+    "prettier.eslintIntegration": true
+    ```
+    
+    These settings ensure code stays clean and readable.
+  </Accordion>
+</AccordionGroup>
+
+## Complete Recommended Settings
+
+For the ultimate Shades of Purple experience with all extensions configured:
+
+```json
+{
+  // Theme Setup
+  "workbench.colorTheme": "Shades of Purple",
+  "workbench.iconTheme": "vscode-icons",
+  
+  // Extension Settings for Shades of Purple
+  "highlight-matching-tag.styles": {
+    "opening": {
+      "full": {
+        "highlight": "rgba(165, 153, 233, 0.3)"
+      }
+    }
+  },
+  "importCost.largePackageColor": "#EC3A37F5",
+  "importCost.mediumPackageColor": "#B362FF",
+  "importCost.smallPackageColor": "#B362FF",
+  
+  // Editor Enhancements
+  "editor.semanticHighlighting.enabled": false,
+  "editor.fontLigatures": true,
+  "editor.renderWhitespace": "all",
+  "editor.snippetSuggestions": "top",
+  "editor.glyphMargin": true,
+  
+  // Formatting
+  "editor.formatOnSave": true,
+  "prettier.eslintIntegration": true,
+  "eslint.run": "onType",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
+}
+```
+
+## Extension Issues?
+
+<CardGroup cols={2}>
+  <Card title="Report Theme Issues" icon="github" href="https://github.com/ahmadawais/shades-of-purple-vscode/issues">
+    Found an extension compatibility issue? Let us know!
+  </Card>
+  
+  <Card title="FAQ" icon="circle-question" href="/getting-started/faq">
+    Check common questions and solutions
+  </Card>
+</CardGroup>

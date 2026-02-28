@@ -1,0 +1,94 @@
+{
+  "projectType": "general",
+  "projectName": "Shades of Purple",
+  "projectDescription": "A professional VSCode theme with hand-picked bold shades of purple for enhanced readability and visual appeal",
+  "theme": "willow",
+  "primaryColor": "#4D2AFF",
+  "lightColor": "#B362FF",
+  "darkColor": "#2D2B55",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "groups": [
+          {
+            "group": "Get Started",
+            "pages": [
+              "introduction",
+              "installation",
+              "quickstart"
+            ]
+          },
+          {
+            "group": "Theme Variants",
+            "pages": [
+              "variants/standard",
+              "variants/super-dark"
+            ]
+          },
+          {
+            "group": "Configuration",
+            "pages": [
+              "configuration/recommended-settings",
+              "configuration/font-setup",
+              "configuration/customization"
+            ]
+          },
+          {
+            "group": "Guides",
+            "pages": [
+              "guides/extensions",
+              "guides/other-platforms",
+              "guides/color-palette"
+            ]
+          },
+          {
+            "group": "Support",
+            "pages": [
+              "support/faq",
+              "support/troubleshooting"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Community",
+        "groups": [
+          {
+            "group": "Resources",
+            "pages": [
+              "community/testimonials",
+              "community/showcase",
+              "community/contributing"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "keyFeatures": [
+    "Hand-picked color palette optimized for readability and reduced eye strain",
+    "Comprehensive support for 50+ programming languages with syntax highlighting",
+    "Two theme variants: Standard and Super Dark for different preferences",
+    "Used by over 5 million developers worldwide with 175+ five-star ratings",
+    "Perfect for presentations, teaching, and daily coding with high contrast",
+    "Available across multiple platforms including terminals, browsers, and other editors",
+    "Regular updates for latest VSCode features including Copilot Chat and diff colors",
+    "Free and open source with extensive customization options"
+  ],
+  "publicApiSurface": [
+    "Shades of Purple (Standard Theme)",
+    "Shades of Purple (Super Dark Theme)",
+    "Color Palette: Background (#2D2B55)",
+    "Color Palette: Foreground (#A599E9)",
+    "Color Palette: Accent (#FAD000)",
+    "Color Palette: Hover (#4D21FC)",
+    "Color Palette: Comment (#B362FF)",
+    "Color Palette: Strings (#A5FF90)",
+    "Color Palette: Keywords (#FF9D00)",
+    "Color Palette: Constants (#FF628C)",
+    "Recommended Settings for Operator Mono font",
+    "Custom VSCode icon theme integration",
+    "Extension compatibility settings"
+  ]
+}
